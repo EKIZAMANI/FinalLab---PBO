@@ -5,12 +5,14 @@
  */
 package GUI;
 
+import Class.beranda;
+
 /**
  *
  * @author USER DK
  */
 public class Beranda extends javax.swing.JFrame {
-
+    private static beranda homee = new beranda();
     /**
      * Creates new form Beranda
      */
@@ -100,6 +102,11 @@ public class Beranda extends javax.swing.JFrame {
         });
 
         Pesantbn.setText("Pesan");
+        Pesantbn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PesantbnMouseClicked(evt);
+            }
+        });
         Pesantbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PesantbnActionPerformed(evt);
@@ -294,6 +301,10 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
+                
             }
             
             if(indexcombo1 == 0){
@@ -306,6 +317,9 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
             }
             if(indexcombo1 == 0){
                 Harga.setText("Rp.0,00");
@@ -317,6 +331,9 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
             }
             if(indexcombo1 == 0){
                 Harga.setText("Rp.0,00");
@@ -327,6 +344,9 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
             }
             if(indexcombo1 == 0){
                 Harga.setText("Rp.0,00");
@@ -337,6 +357,9 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
             }
             if(indexcombo1 == 0){
                 Harga.setText("Rp.0,00");
@@ -347,6 +370,9 @@ public class Beranda extends javax.swing.JFrame {
                 int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
                 String hasil = String.valueOf(hargaa);
                 Harga.setText("Rp."+hasil+",00");
+                homee.setHarga("Rp."+hasil+",00");
+                homee.setTujuan(pilih);
+                homee.setJumlah_kursi(pilih1);
             }
             if(indexcombo1 == 0){
                 Harga.setText("Rp.0,00");
@@ -373,6 +399,12 @@ public class Beranda extends javax.swing.JFrame {
     private void HargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HargaActionPerformed
+
+    private void PesantbnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PesantbnMouseClicked
+        Pesanan pesan = new Pesanan(homee.getTujuan(),homee.getJumlah_kursi(),homee.getharga());
+        pesan.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_PesantbnMouseClicked
 
     /**
      * @param args the command line arguments

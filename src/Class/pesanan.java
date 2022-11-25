@@ -9,7 +9,15 @@ package Class;
  *
  * @author USER DK
  */
-public class pesanan {
-    
-    
+public class pesanan extends beranda {
+    private String nama;
+   
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
 }

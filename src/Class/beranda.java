@@ -14,6 +14,7 @@ public class beranda {
     private String Tujuan;
     private String Tanggal_pemesanan;
     private String Jumlah_kursi;
+    private String Harga;
 
     public String getAsal() {
         return Asal;
@@ -45,5 +46,13 @@ public class beranda {
 
     public void setJumlah_kursi(String jumlah_kursi) {
         Jumlah_kursi = jumlah_kursi;
+    }
+    
+    public String getharga() {
+        return Harga;
+    }
+
+    public void setHarga(String harga) {
+        Harga = harga;
     }
 }

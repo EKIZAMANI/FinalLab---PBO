@@ -16,24 +16,7 @@ public class Beranda extends javax.swing.JFrame {
      */
     public Beranda() {
         initComponents();
-        int indexcombo = Tujuan.getSelectedIndex();
-        Object pilihan = Tujuan.getSelectedItem();
-        String pilih = String.valueOf(pilihan);
-        if (indexcombo == 1){
-            Harga.setText("Rp. 200.000,00");
-        }else if (indexcombo == 2){
-            Harga.setText("Rp. 120.000,00");
-        }else if (indexcombo == 3){
-            Harga.setText("Rp. 180.000,00");
-        }else if (indexcombo == 4){
-            Harga.setText("Rp. 180.000,00");
-        }else if (indexcombo == 5){
-            Harga.setText("Rp. 180.000,00");
-        }else if(indexcombo == 6){
-            Harga.setText("Rp. 250.000,00");
-        }else{
-            Harga.setText("Rp. 0,00");
-        }
+         Harga.setText("Rp. 0,00");
         
     }
 
@@ -57,13 +40,13 @@ public class Beranda extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         TGLPesan = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        JMLHKursi = new javax.swing.JTextField();
         Clearbtn = new javax.swing.JButton();
         Pesantbn = new javax.swing.JButton();
         Tujuan = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         Harga = new javax.swing.JTextField();
         Cek = new javax.swing.JButton();
+        JMLHKursi = new javax.swing.JComboBox<>();
         home = new javax.swing.JLabel();
         pesanan = new javax.swing.JLabel();
         akun = new javax.swing.JLabel();
@@ -87,7 +70,7 @@ public class Beranda extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 1, 12)); // NOI18N
-        jLabel2.setText("Asal");
+        jLabel2.setText("Lokasi Penjemputan");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 1, 12)); // NOI18N
         jLabel3.setText("Tujuan");
@@ -133,6 +116,12 @@ public class Beranda extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 1, 12)); // NOI18N
         jLabel7.setText("Harga");
 
+        Harga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HargaActionPerformed(evt);
+            }
+        });
+
         Cek.setText("Cek Harga");
         Cek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,29 +129,33 @@ public class Beranda extends javax.swing.JFrame {
             }
         });
 
+        JMLHKursi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "/Orang", "1", "2", "3", "4", "5", " " }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(JMLHKursi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Asal)
                             .addComponent(Tujuan, 0, 190, Short.MAX_VALUE)
                             .addComponent(jLabel4)
                             .addComponent(TGLPesan)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JMLHKursi)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Harga, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Harga)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Cek)
                 .addGap(18, 18, 18)
@@ -188,9 +181,9 @@ public class Beranda extends javax.swing.JFrame {
                 .addComponent(TGLPesan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel5)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JMLHKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -275,7 +268,7 @@ public class Beranda extends javax.swing.JFrame {
         Asal.setText("");
         Tujuan.setSelectedIndex(0);
         TGLPesan.setText("");
-        JMLHKursi.setText("");
+        JMLHKursi.setSelectedIndex(0);
         Harga.setText("Rp. 0,00");
     }//GEN-LAST:event_ClearbtnMouseClicked
 
@@ -291,20 +284,75 @@ public class Beranda extends javax.swing.JFrame {
          int indexcombo = Tujuan.getSelectedIndex();
         Object pilihan = Tujuan.getSelectedItem();
         String pilih = String.valueOf(pilihan);
+         int indexcombo1 = JMLHKursi.getSelectedIndex();
+        Object pilihan1 = JMLHKursi.getSelectedItem();
+        String pilih1 = String.valueOf(pilihan1);
+        //int JMLHKursi = 1;
         if (indexcombo == 1){
-            Harga.setText("Rp. 200.000,00");
+            String harga = "200000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
+            
         }else if (indexcombo == 2){
-            Harga.setText("Rp. 120.000,00");
+            String harga = "120000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
+            
         }else if (indexcombo == 3){
-            Harga.setText("Rp. 180.000,00");
+            String harga = "160000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
         }else if (indexcombo == 4){
-            Harga.setText("Rp. 180.000,00");
+           String harga = "170000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
         }else if (indexcombo == 5){
-            Harga.setText("Rp. 180.000,00");
+            String harga = "180000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
         }else if(indexcombo == 6){
-            Harga.setText("Rp. 250.000,00");
+            String harga = "250000";
+            if(indexcombo1 != 0){
+                int hargaa = Integer.parseInt(harga) * Integer.parseInt(pilih1);
+                String hasil = String.valueOf(hargaa);
+                Harga.setText("Rp."+hasil+",00");
+            }
+            if(indexcombo1 == 0){
+                Harga.setText("Rp.0,00");
+            }
         }else{
-            Harga.setText("Rp. 0,00");
+                Harga.setText("Rp.0,00");   
         }
     }//GEN-LAST:event_CekActionPerformed
 
@@ -321,6 +369,10 @@ public class Beranda extends javax.swing.JFrame {
         home.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeMouseClicked
+
+    private void HargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HargaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,7 +414,7 @@ public class Beranda extends javax.swing.JFrame {
     private javax.swing.JButton Cek;
     private javax.swing.JButton Clearbtn;
     private javax.swing.JTextField Harga;
-    private javax.swing.JTextField JMLHKursi;
+    private javax.swing.JComboBox<String> JMLHKursi;
     private javax.swing.JButton Pesantbn;
     private javax.swing.JTextField TGLPesan;
     private javax.swing.JComboBox<String> Tujuan;

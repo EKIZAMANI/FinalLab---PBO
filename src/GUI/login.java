@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
-
+import Class.loging;
 /**
  *
  * @author Asus TUF
  */
 public class login extends javax.swing.JFrame {
-
+    private static loging log = new loging();
     /**
      * Creates new form login
      */
@@ -31,9 +31,9 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtUsername = new java.awt.TextField();
+        Username = new java.awt.TextField();
         jLabel4 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JPasswordField();
+        Password = new javax.swing.JPasswordField();
         jButton_Login = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton_Register1 = new javax.swing.JButton();
@@ -57,12 +57,12 @@ public class login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel3.setText("Username           : ");
 
-        txtUsername.setText("");
+        Username.setText("");
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel4.setText("Password            : ");
 
-        txtPassword.setText("");
+        Password.setText("");
 
         jButton_Login.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButton_Login.setText("Login");
@@ -117,8 +117,8 @@ public class login extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70))))
         );
@@ -131,11 +131,11 @@ public class login extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,7 +184,9 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton_LoginActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        if(txtPassword.getText().equals(Register.password) && txtUsername.getText().equals(Register.username)){
+        if(Password.getText().equals(log.getPassword()) && Username.getText().equals(log.getUser())){
+            log.setUser(Username.getText());
+            log.setPassword(Password.getText());
             Home user = new Home();
             user.setVisible(true);
             user.pack();
@@ -255,7 +257,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField txtPassword;
-    private java.awt.TextField txtUsername;
+    private javax.swing.JPasswordField Password;
+    private java.awt.TextField Username;
     // End of variables declaration                   
 }

@@ -3,20 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
-
+import Class.register;
 /**
  *
  * @author Asus TUF
  */
 public class Register extends javax.swing.JFrame {
-
+    private static register reg = new register();
     /**
      * Creates new form Register
      */
     
-    public static String name;
-    public static String username;
-    public static String password;
+
     
     public Register() {
         
@@ -40,14 +38,14 @@ public class Register extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtUsername = new java.awt.TextField();
+        Username = new java.awt.TextField();
         jLabel4 = new javax.swing.JLabel();
-        txtPassword1 = new javax.swing.JPasswordField();
+        Password1 = new javax.swing.JPasswordField();
         jButton_Register = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtName = new java.awt.TextField();
+        Name = new java.awt.TextField();
         jLabel6 = new javax.swing.JLabel();
-        txtPassword2 = new javax.swing.JPasswordField();
+        Password2 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,12 +66,12 @@ public class Register extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel3.setText("Username           : ");
 
-        txtUsername.setText("");
+        Username.setText("");
 
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel4.setText("Password            : ");
 
-        txtPassword1.setText("");
+        Password1.setText("");
 
         jButton_Register.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButton_Register.setText("Register");
@@ -86,18 +84,18 @@ public class Register extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel5.setText("Name                 : ");
 
-        txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtName.setText("");
-        txtName.addActionListener(new java.awt.event.ActionListener() {
+        Name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Name.setText("");
+        Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
+                txtNameActionPermed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabel6.setText("Retype Password : ");
 
-        txtPassword2.setText("");
+        Password2.setText("");
 
         jLabel8.setForeground(new java.awt.Color(255, 0, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -128,11 +126,11 @@ public class Register extends javax.swing.JFrame {
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
-                                .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Password2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70))))
         );
@@ -146,19 +144,19 @@ public class Register extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -201,15 +199,15 @@ public class Register extends javax.swing.JFrame {
 
     private void jButton_RegisterActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
-        if(txtPassword1.getText().equals(txtPassword2.getText())){
-            if( txtPassword1.getText().equals("") && txtUsername.getText().equals("") && txtName.getText().equals("")){
+        if(Password1.getText().equals(Password2.getText())){
+            if( Password1.getText().equals("") && Username.getText().equals("") && Name.getText().equals("")){
                 jLabel8.setText("Please Insert yout data!");
             }
             else{
-                name = txtName.getText();
-                username = txtUsername.getText();
-                password = txtPassword1.getText();
-
+                reg.setName(Name.getText());
+                reg.setUsername(Username.getText());
+                reg.setPassword1(Password1.getText());
+               
                 //go to login
                 login log = new login();
                 log.setVisible(true);
@@ -225,7 +223,7 @@ public class Register extends javax.swing.JFrame {
         }
     }                                                
 
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void txtNameActionPermed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
     }                                       
 
@@ -275,9 +273,9 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private java.awt.TextField txtName;
-    private javax.swing.JPasswordField txtPassword1;
-    private javax.swing.JPasswordField txtPassword2;
-    private java.awt.TextField txtUsername;
+    private java.awt.TextField Name;
+    private javax.swing.JPasswordField Password1;
+    private javax.swing.JPasswordField Password2;
+    private java.awt.TextField Username;
     // End of variables declaration                   
 }

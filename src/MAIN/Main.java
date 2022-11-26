@@ -1,8 +1,11 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package GUI;
+package MAIN;
+
+import GUI.Register;
 
 /**
  *
@@ -17,9 +20,7 @@ public class Main {
         // TODO code application logic here
         Register rg = new Register();
         rg.setVisible(true);
-        rg.pack();
-        rg.setLocationRelativeTo(null);
-        rg.setDefaultCloseOperation(Register.EXIT_ON_CLOSE);
+        
     }
     
 }

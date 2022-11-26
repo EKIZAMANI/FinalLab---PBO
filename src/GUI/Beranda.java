@@ -18,7 +18,7 @@ public class Beranda extends javax.swing.JFrame {
      */
     public Beranda() {
         initComponents();
-         Harga.setText("Rp. 0,00");
+        Harga.setText("Rp. 0,00");
         
     }
 
@@ -156,12 +156,10 @@ public class Beranda extends javax.swing.JFrame {
                 .addComponent(Pesantbn)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Asal, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,8 +221,18 @@ public class Beranda extends javax.swing.JFrame {
         });
 
         pesanan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/shopping-bag.png"))); // NOI18N
+        pesanan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pesananMouseClicked(evt);
+            }
+        });
 
         akun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/user.png"))); // NOI18N
+        akun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                akunMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -242,9 +250,9 @@ public class Beranda extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146)
-                .addComponent(pesanan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pesanan)
+                .addGap(156, 156, 156)
                 .addComponent(akun, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
@@ -419,6 +427,18 @@ public class Beranda extends javax.swing.JFrame {
         pesan.setVisible(true);
         dispose();
     }//GEN-LAST:event_PesantbnMouseClicked
+
+    private void akunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_akunMouseClicked
+        AboutUs about = new AboutUs();
+        about.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_akunMouseClicked
+
+    private void pesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pesananMouseClicked
+         Pesanan pesan = new Pesanan(homee.getTujuan(),homee.getJumlah_kursi(),homee.getharga());
+        pesan.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_pesananMouseClicked
 
     /**
      * @param args the command line arguments

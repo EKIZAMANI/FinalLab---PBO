@@ -1,2 +1,12 @@
-# FinalLab---PBO
+# FinalLab-PBO
 final lab pemrograman berorientasi object
+TEMA : TRAVEL ONLINE
+KELOMPOK 2
+ANGGOTA :
+- M ZAKI ZAMANI
+- T.IDRIS ANDINA
+- T.MALIK KAMAL
+- ASKAR AZIZ
+- NITIYA RIHADATUL
+- NURHAMIDAH
+

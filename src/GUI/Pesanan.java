@@ -6,7 +6,7 @@
 package GUI;
 
 import Class.pesanan;
-
+import Class.register;
 /**
  *
  * @author USER DK
@@ -18,10 +18,12 @@ public class Pesanan extends javax.swing.JFrame {
      */
     public Pesanan(String Tujuan,String JMLHKursi,String Harga) {
         initComponents();
-        
+        setLocationRelativeTo(null);
         pesan.setTujuan(Tujuan);
         pesan.setJumlah_kursi(JMLHKursi);
         pesan.setHarga(Harga);
+        pesan.setNama(register.Name);
+        nama.setText(pesan.getNama());
         tujuan.setText(pesan.getTujuan());
         jmlhkursi.setText(pesan.getJumlah_kursi());
         totalharga.setText(pesan.getharga());

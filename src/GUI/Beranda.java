@@ -18,6 +18,7 @@ public class Beranda extends javax.swing.JFrame {
      */
     public Beranda() {
         initComponents();
+        setLocationRelativeTo(null);
         Harga.setText("Rp. 0,00");
         
     }
